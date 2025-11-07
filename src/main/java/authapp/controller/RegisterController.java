@@ -30,7 +30,7 @@ public class RegisterController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User user = new User(request.getParameter("firstName"), request.getParameter("lastName"), request.getParameter("email"), Long.parseLong(request.getParameter("contactNumber")), request.getParameter("password"));
+		User user = new User(request.getParameter("firstName"), request.getParameter("lastName"), request.getParameter("email"), request.getParameter("contactNumber"), request.getParameter("password"));
 		UserDao uDao = new UserDao();
 		if (uDao.setUser(user)) {
 			request.setAttribute("status", "success");

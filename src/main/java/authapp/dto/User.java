@@ -1,13 +1,20 @@
 package authapp.dto;
 
 public class User {
+	private int sno;
 	private String firstName;
 	private String lastName;
 	private String email;
-	private long contactNumber;
+	private String contactNumber;
 	private String password;
+	private String role;
 
-	public User(String firstName, String lastName, String email, long contactNumber, String password) {
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public User(String firstName, String lastName, String email, String contactNumber, String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -16,9 +23,34 @@ public class User {
 		this.password = password;
 	}
 
-	public User() {
+	public User(String firstName, String lastName, String email, String contactNumber, String password, String role) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.contactNumber = contactNumber;
+		this.password = password;
+		this.role = role;
+	}
+
+	public User(int sno, String firstName, String lastName, String email, String contactNumber, String password,
+			String role) {
+		super();
+		this.sno = sno;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.contactNumber = contactNumber;
+		this.password = password;
+		this.role = role;
+	}
+
+	public int getSno() {
+		return sno;
+	}
+
+	public void setSno(int sno) {
+		this.sno = sno;
 	}
 
 	public String getFirstName() {
@@ -45,11 +77,11 @@ public class User {
 		this.email = email;
 	}
 
-	public long getContactNumber() {
+	public String getContactNumber() {
 		return contactNumber;
 	}
 
-	public void setContactNumber(long contactNumber) {
+	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
 
@@ -59,6 +91,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 }

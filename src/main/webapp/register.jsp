@@ -23,7 +23,7 @@
 			<input type="text" name="firstName" placeholder="enter firstname">
 			<input type="text" name="lastName" placeholder="enter lastname">
 			<input type="email" name="email" placeholder="enter email address">
-			<input type="number" name="contactNumber" placeholder="enter phone number">
+			<input type="text" name="contactNumber" placeholder="enter phone number">
 			<input type="password" name="password" placeholder="enter password">
 			<button>register</button>
 		</form>

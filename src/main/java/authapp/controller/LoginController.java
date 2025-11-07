@@ -38,8 +38,13 @@ public class LoginController extends HttpServlet {
 		UserDao uDao = new UserDao();
 		User user = uDao.getUser(checkEmail);
 		if (user != null && checkPassword.equals(user.getPassword())) {
-			request.getSession().setAttribute("user", user);
-			response.sendRedirect("dashboard");
+			if (user.getRole().equals("admin")) {
+				request.getSession().setAttribute("user", user);
+				response.sendRedirect("admindashboard");
+			} else {
+				request.getSession().setAttribute("user", user);
+				response.sendRedirect("dashboard");
+			}
 		} else {
 			request.setAttribute("authenticated", "false");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
